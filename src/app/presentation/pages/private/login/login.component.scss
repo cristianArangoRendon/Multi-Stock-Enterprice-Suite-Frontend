@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
+
+:host {
+    display: flex;
+}
+.left,
+.right {
+    width: 50%;
+}
+.right {
+    background-color: #fefeff;
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    flex-direction: row; /* Para colocar los elementos en una fila */
+}
+.img-logo {
+    width: 300px;
+    margin-bottom: 5rem;
+    position: absolute;
+    top: -150px;
+    left: 40px;
+}
+
+.right .form-container {
+    position: relative;
+}
+.right .form-container {
+    position: relative;
+}
+.left {
+    background-image: url(../../../../../assets/img/imgLogin.avif);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    -webkit-box-shadow: 10px 0px 15px 0px rgba(8, 91, 163, 0.57);
+    -moz-box-shadow: 10px 0px 15px 0px rgba(8, 91, 163, 0.57);
+    box-shadow: 10px 0px 16px 0px rgb(29 42 53 / 57%);
+    z-index: 999;
+}
+.form-container {
+    width: 50%;
+    margin-top: 5rem;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    height: 4rem;
+    margin: 25px auto;
+    padding: 10px;
+    border: 1px solid #4c85ff;
+    outline-color: #e70000;
+}
+input[type="submit"] {
+    background-color: #23233b;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+}
+input[type="submit"]:hover {
+    background-color: #050506;
+}
+.btn {
+    font-size: 18px;
+    font-family: "Playfair Display", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+mat-label {
+    font-family: "Playfair Display", serif;
+}
+mat-error {
+    font-family: "Playfair Display", serif;
+}
+
+.img-logo {
+    max-width: 360px;
+    margin-bottom: 5rem;
+}
+
+.icon-container {
+    font-size: 2.5rem; /* Ajusta este valor según tu preferencia */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+
+@media screen and (max-width: 768px) {
+    :host {
+        display: block;
+        position: relative;
+    }
+    .left,
+    .right {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .form-container {
+        width: 100%;
+    }
+
+    .right {
+        top: 20rem;
+    }
+
+    .left {
+        display: block;
+        display: none;
+        opacity: 70%;
+        background-size: cover;
+        background-position: center;
+        height: 50vh;
+        z-index: -10;
+        top: 10rem;
+    }
+
+    input[type="submit"] {
+        width: 70%;
+        border-radius: 0.5rem;
+    }
+}

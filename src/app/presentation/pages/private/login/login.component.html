@@ -1,0 +1,71 @@
+<div class="left"></div>
+
+<div class="right">
+    <div class="form-container">
+        <img
+            class="img-logo"
+            src="../../../../../assets/img/multistock-logo.png"
+            alt="MDN"
+        />
+        <form [formGroup]="formularioLogin" (submit)="onSubmit()">
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input
+                    type="email"
+                    matInput
+                    placeholder="Ex. admin@gmail.com"
+                    formControlName="email"
+                    required
+                />
+                @if (formularioLogin.get('email')?.invalid) {
+                <mat-error>Please enter a valid email address</mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>password</mat-label>
+                <input
+                    type="password"
+                    matInput
+                    placeholder="Ex. ******"
+                    formControlName="password"
+                    required
+                />
+                @if (formularioLogin.get('password')?.invalid) {
+                <mat-error>Please enter a valid password address</mat-error>
+                }
+            </mat-form-field>
+            <input class="btn" type="submit" value="Iniciar sesión" />
+            <div class="container-social">
+                <span class="icon-container">
+                    <a
+                        href="https://www.facebook.com/cristian.rendon.773124"
+                        target="_blank"
+                    >
+                        <i class="fab fa-facebook" style="color: #3b5998"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram" style="color: #3f729b"></i>
+                    </a>
+
+                    <a
+                        href="https://api.whatsapp.com/send?phone=3004026226"
+                        target="_blank"
+                    >
+                        <i class="fab fa-whatsapp" style="color: #25d366"></i>
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/cristian-camilo-arango-rendon-236ba1246/"
+                    >
+                        <i
+                            class="fa-brands fa-linkedin"
+                            style="color: #0e76a8"
+                        ></i>
+                    </a>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
