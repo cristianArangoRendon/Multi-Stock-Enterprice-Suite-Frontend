@@ -1,14 +1,18 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ToggleService } from './toggle.service';
 import { DatePipe } from '@angular/common';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
+import { HttpServices } from 'src/app/infrastructure/services/HttpService/HttpService';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+    HeaderName = "";
+    image = ""
+
 
     isSticky: boolean = false;
     @HostListener('window:scroll', ['$event'])
@@ -26,12 +30,19 @@ export class HeaderComponent {
     constructor(
         private toggleService: ToggleService,
         private datePipe: DatePipe,
-        public themeService: CustomizerSettingsService
+        public themeService: CustomizerSettingsService,
+        private _HttpService: HttpServices
     ) {
         this.toggleService.isToggled$.subscribe(isToggled => {
-            this.isToggled = isToggled;
+        this.isToggled = isToggled;
+
         });
     }
+    ngOnInit(): void {
+        this.getUser()
+    }
+
+
 
     toggleTheme() {
         this.themeService.toggleTheme();
@@ -68,4 +79,11 @@ export class HeaderComponent {
     currentDate: Date = new Date();
     formattedDate: any = this.datePipe.transform(this.currentDate, 'dd MMMM yyyy');
 
+    getUser(){
+        this._HttpService.jwtDecodeToken().subscribe(res => {
+            this.HeaderName = res.UserName,
+            this.image = res.image
+        });
+        return
+    }
 }

@@ -24,7 +24,7 @@ import { CustomizerSettingsComponent } from './_layout/customizer-settings/custo
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { LoginComponent } from "./presentation/pages/private/login/login.component";
-import { ConfigService } from './infrastructure/services/ConfigService';
+import { ConfigService } from './infrastructure/services/Config/ConfigService';
 
 @NgModule({
     declarations: [

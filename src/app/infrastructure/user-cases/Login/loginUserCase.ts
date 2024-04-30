@@ -1,4 +1,4 @@
-import { LoginService } from '../services/LoginService';
+import { LoginService } from '../../services/LoginService/LoginService';
 import { ResponseDTO } from 'src/app/core/DTOs/ResponseDTO';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs';
@@ -33,5 +33,4 @@ export class loginUserCase {
             observer.complete();
         });
     }
-
 }

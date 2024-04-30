@@ -8,7 +8,7 @@ import { LoginComponent } from './presentation/pages/private/login/login.compone
 const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: '', component: DashboardComponent},
-    {path: 'dashboard', component: DashboardComponent},
+    {path: 'home', component: DashboardComponent},
     {path: 'error-500', component: InternalErrorComponent},
     {path: '**', component: NotFoundComponent}
 ];

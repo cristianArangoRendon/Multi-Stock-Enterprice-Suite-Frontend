@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
+
+:host {
+    display: flex;
+}
+
+
+.formulario-login{
+    height: 500px;
+    padding: 10rem;
+    width: 800px;
+}
+
+
+
+.example-full-width{
+    width:480px
+}
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    height: 4rem;
+    margin: 25px auto;
+    padding: 10px;
+    border: 1px solid #4c85ff;
+    outline-color: #e70000;
+}
+input[type="submit"] {
+    background-color: #23233b;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+}
+input[type="submit"]:hover {
+    background-color: #050506;
+}
+.btn {
+    font-size: 18px;
+    font-family: "Playfair Display", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.img-logo {
+    width: 300px;
+    margin-bottom: 5rem;
+    position: absolute;
+    top: 10px;
+    left: 240px;
+}
+
+
+
+mat-label {
+    font-family: "Playfair Display", serif;
+}
+mat-error {
+    font-family: "Playfair Display", serif;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    :host {
+        display: block;
+        position: relative;
+    }
+
+
+    input[type="submit"] {
+        width: 70%;
+        border-radius: 0.5rem;
+    }
+}

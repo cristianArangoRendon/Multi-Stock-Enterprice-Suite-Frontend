@@ -1,0 +1,26 @@
+<div>
+    <img
+    class="img-logo"
+    src="../../../../../assets/img/multistock-logo.png"
+    alt="MDN"
+    />
+    <form [formGroup]="formularioLogin" (submit)="onSubmit()" class="formulario-login">
+        <mat-form-field class="example-full-width">
+
+            <mat-label>Razón social</mat-label>
+            <input
+                type="text"
+                matInput
+                formControlName="Nombre"
+                required
+            />
+            @if (formularioLogin.get('Nombre')?.invalid) {
+            <mat-error>Please enter a valid name address</mat-error>
+            }
+        </mat-form-field>
+
+        <input class="btn" type="submit" value="Crear" />
+    </form>
+</div>
+
+

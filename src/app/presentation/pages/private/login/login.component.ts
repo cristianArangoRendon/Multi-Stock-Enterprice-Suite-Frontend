@@ -8,8 +8,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Router } from '@angular/router';
-
-import { loginUserCase } from 'src/app/infrastructure/user-cases/loginUserCase';
+import { loginUserCase } from 'src/app/infrastructure/user-cases/Login/loginUserCase';
 
 @Component({
     selector: 'app-login',
@@ -27,17 +26,19 @@ export class LoginComponent {
         private _router: Router
     ) {}
     formularioLogin = this.fb.group({
-        email: ['', [Validators.required, Validators.email]],
-        password: ['', Validators.required],
+        email: ['cristiancamiloarangorendon@gmail.com', [Validators.required, Validators.email]],
+        password: ['156935cc', Validators.required],
     });
 
-    onSubmit() {
-        if (this.formularioLogin.valid) {
-            this.ls.auth(this.formularioLogin.value).subscribe((success) => {
-                if (success) {
-                    this._router.navigate(['/dashboard']);
-                }
-            });
+    onSubmit()
+        {
+            if(this.formularioLogin.valid){
+                this.ls.auth(this.formularioLogin.value).subscribe((success) => {
+                    console.log("success", success);
+                    if (success) {
+                        this._router.navigate(['/home']);
+                    }
+                });
+            }
         }
-    }
 }

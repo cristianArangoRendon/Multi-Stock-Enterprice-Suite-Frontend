@@ -47,9 +47,9 @@
             </li>
             <li>
                 <button mat-icon-button [matMenuTriggerFor]="profileMenu" class="profile-btn main-color border-none bg-transparent position-relative">
-                    <img src="assets/img/admin.jpg" class="rounded-circle" alt="admin">
+                    <img src="{{image}}" class="rounded-circle" alt="admin">
                     Admin
-                    <span class="fw-semibold">Adison Jack</span>
+                    <span class="fw-semibold">{{HeaderName}}</span>
                 </button>
                 <mat-menu class="profile-menu-dropdown" #profileMenu="matMenu" xPosition="before">
                     <ul class="m-0">

@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable, BehaviorSubject, catchError } from 'rxjs';
+import { Observable, BehaviorSubject, catchError, throwError, of } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { ConfigService } from './ConfigService';
+import { ConfigService } from '../Config/ConfigService';
 import { ResponseDTO } from 'src/app/core/DTOs/ResponseDTO';
 import { IHttpService } from 'src/app/core/Interfaces/IHttpService';
-
+import { jwtDecode } from "jwt-decode";
+import { UserDTO } from 'src/app/core/DTOs/UserDTO';
 @Injectable({
     providedIn: 'root',
 })
-export class HttpService implements IHttpService {
+export class HttpServices implements IHttpService {
     private apiUrl: string = '';
     private apiUrlLoaded: BehaviorSubject<boolean> =
         new BehaviorSubject<boolean>(false);
@@ -45,7 +46,7 @@ export class HttpService implements IHttpService {
         }
 
         try {
-            const decoded: any = jwtDecode(token);
+            const decoded: any = this.jwtDecodeToken();
             const currentTime = Date.now() / 1000;
             if (decoded.exp < currentTime) {
                 localStorage.removeItem('authToken');
@@ -147,8 +148,31 @@ export class HttpService implements IHttpService {
     delete(endpoint: string, params?: any): Observable<ResponseDTO> {
         return this.performHttpRequest<ResponseDTO>('delete', endpoint, params);
     }
+
+
+    jwtDecodeToken() {
+        try {
+            const token = localStorage.getItem('authToken') ?? "";
+            const decoded:  UserDTO = jwtDecode(token);
+            const userDTO: UserDTO = {
+                UserName: decoded.UserName,
+                LastName: decoded.LastName,
+                Email: decoded.Email,
+                UserId: decoded.UserId,
+                idCompany: decoded.idCompany,
+                idRol: decoded.idRol,
+                gender: decoded.gender,
+                image : decoded.image,
+                lastLoginDate: decoded.lastLoginDate,
+            };
+            return of(userDTO);
+        } catch (error) {
+            console.error("Error al decodificar el token:", error);
+            return throwError(error);
+        }
+    }
 }
-function jwtDecode(token: string): any {
-    throw new Error('Function not implemented.');
-}
+
+
+
 
