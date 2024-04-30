@@ -8,6 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardContent } from '@angular/material/card';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CompanyService } from 'src/app/infrastructure/services/Company/CompanyService';
+import { Dialog } from '@angular/cdk/dialog';
 
 @Component({
     selector: 'app-company',
@@ -31,13 +33,20 @@ export class CompanyComponent {
     submitted = false;
     constructor(
         private fb: FormBuilder,
-        private _router: Router
+        private _router: Router,
+        private _company: CompanyService
     ) {}
     formularioLogin = this.fb.group({
-        Nombre: ['', [Validators.required]],
+        description: ['', [Validators.required]],
+
     });
     onSubmit()
         {
-            console.log(this.formularioLogin);
+            if(this.formularioLogin.valid){
+                this._company.Create(this.formularioLogin.value).subscribe((success) => {
+                    if(success){
+                    }
+                });
+            }
         }
 }

@@ -1,25 +1,31 @@
 .container-form{
-    height: 700px;
-    width: 700px;
+    height: 670px;
+    width: 900px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.formulario-labels{}
+.formulario-labels{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding-left: 7.5rem;
+}
 
 .img-logo{
     padding: 5rem;
-    width: 400px;
+    width: 420px;
 }
 .formulario-login{
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 input[type="submit"] {
     display: block;
-    width: 200px;
+    width: 500px;
     height: 3.5rem;
     margin: 25px auto;
     padding: 10px;

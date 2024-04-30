@@ -4,7 +4,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { CompanyDTO } from 'src/app/core/DTOs/CompanyDTO';
-import { GetCompanies } from 'src/app/infrastructure/services/Company/GetCompanies';
+import { CompanyService } from 'src/app/infrastructure/services/Company/CompanyService';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
@@ -39,7 +39,7 @@ export class DashboardComponent {
     dataSource: CompanyDTO[] = [];
 
     constructor(
-        private _cmp: GetCompanies,
+        private _cmp: CompanyService,
         private _router: Router,
         public dialog: MatDialog
     ) {}
@@ -53,10 +53,11 @@ export class DashboardComponent {
     }
     openDialog(): void {
         const dialogRef = this.dialog.open(CompanyComponent, {
+            
         });
 
         dialogRef.afterClosed().subscribe((result) => {
-            console.log('The dialog was closed');
+
         });
     }
 }

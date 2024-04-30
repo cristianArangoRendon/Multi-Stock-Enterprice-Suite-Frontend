@@ -12,68 +12,74 @@
                 <input
                     type="text"
                     matInput
-                    formControlName="Nombre"
+                    formControlName="description"
                     required
                 />
                 @if (formularioLogin.get('Nombre')?.invalid) {
-                <mat-error>Por favor ingresa una dirección de nombre válida</mat-error>
+                <mat-error>Por favor ingresa una razón social valida</mat-error>
                 }
             </mat-form-field>
 
             <mat-form-field class="example-full-width">
 
-                <mat-label>Razón social</mat-label>
+                <mat-label>Dirección</mat-label>
                 <input
                     type="text"
                     matInput
-                    formControlName="Nombre"
-                    required
                 />
-                @if (formularioLogin.get('Nombre')?.invalid) {
-                <mat-error>Por favor ingresa una dirección de nombre válida</mat-error>
+                @if (formularioLogin.get('Dirección')?.invalid) {
                 }
             </mat-form-field>
 
 
             <mat-form-field class="example-full-width">
 
-                <mat-label>Razón social</mat-label>
+                <mat-label>Número de Teléfono</mat-label>
                 <input
-                    type="text"
+                    type="number"
                     matInput
-                    formControlName="Nombre"
                     required
                 />
-                @if (formularioLogin.get('Nombre')?.invalid) {
-                <mat-error>Por favor ingresa una dirección de nombre válida</mat-error>
+                @if (formularioLogin.get('Numero')?.invalid) {
+                <mat-error>Por favor ingresa un número de telefono válido</mat-error>
                 }
             </mat-form-field>
 
             <mat-form-field class="example-full-width">
 
-                <mat-label>Razón social</mat-label>
+                <mat-label>Fecha de Fundación</mat-label>
                 <input
                     type="text"
                     matInput
-                    formControlName="Nombre"
                     required
                 />
-                @if (formularioLogin.get('Nombre')?.invalid) {
-                <mat-error>Por favor ingresa una dirección de nombre válida</mat-error>
+                @if (formularioLogin.get('fundacion')?.invalid) {
+                <mat-error>Por favor ingresa una Fecha de Fundación válida</mat-error>
                 }
             </mat-form-field>
 
             <mat-form-field class="example-full-width">
 
-                <mat-label>Razón social</mat-label>
+                <mat-label>Nit Registrado</mat-label>
                 <input
                     type="text"
                     matInput
-                    formControlName="Nombre"
                     required
                 />
-                @if (formularioLogin.get('Nombre')?.invalid) {
-                <mat-error>Por favor ingresa una dirección de nombre válida</mat-error>
+                @if (formularioLogin.get('Nit')?.invalid) {
+                <mat-error>Por favor ingresa un Nit válido</mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+
+                <mat-label>Nombre Ceo</mat-label>
+                <input
+                    type="text"
+                    matInput
+                />
+                @if (formularioLogin.get('Ceo')?.invalid) {
+                    <mat-error>Por favor ingresa una nota</mat-error>
                 }
             </mat-form-field>
         </div>
