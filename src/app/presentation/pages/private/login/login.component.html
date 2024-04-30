@@ -18,7 +18,7 @@
                     required
                 />
                 @if (formularioLogin.get('email')?.invalid) {
-                <mat-error>Please enter a valid email address</mat-error>
+                <mat-error>Por favor ingresa una dirección de email válida</mat-error>
                 }
             </mat-form-field>
 
@@ -32,7 +32,7 @@
                     required
                 />
                 @if (formularioLogin.get('password')?.invalid) {
-                <mat-error>Please enter a valid password address</mat-error>
+                <mat-error>Por favor ingresa una password válida</mat-error>
                 }
             </mat-form-field>
             <input class="btn" type="submit" value="Iniciar sesión" />

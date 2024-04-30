@@ -124,7 +124,10 @@ export class HttpServices implements IHttpService {
     }
 
     get(endpoint: string, params?: any): Observable<ResponseDTO> {
-        return this.performHttpRequest<ResponseDTO>('get', endpoint, params);
+        return this.performHttpRequest<ResponseDTO>(
+            'get',
+            endpoint,
+            params);
     }
 
     post(endpoint: string, params?: any, body?: any): Observable<ResponseDTO> {

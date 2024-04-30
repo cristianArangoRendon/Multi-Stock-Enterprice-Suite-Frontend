@@ -1,29 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
-
-:host {
+.container-form{
+    height: 700px;
+    width: 700px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.formulario-labels{}
 
-
+.img-logo{
+    padding: 5rem;
+    width: 400px;
+}
 .formulario-login{
-    height: 500px;
-    padding: 10rem;
-    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-
-
-.example-full-width{
-    width:480px
-}
 input[type="submit"] {
     display: block;
-    width: 100%;
-    height: 4rem;
+    width: 200px;
+    height: 3.5rem;
     margin: 25px auto;
     padding: 10px;
     border: 1px solid #4c85ff;
     outline-color: #e70000;
+}
+
+.example-full-width{
+    width: 300px;
 }
 input[type="submit"] {
     background-color: #23233b;
@@ -40,40 +45,7 @@ input[type="submit"]:hover {
 .btn {
     font-size: 18px;
     font-family: "Playfair Display", serif;
-    font-weight: 300;
+    width: 800px;
     font-style: normal;
 }
 
-.img-logo {
-    width: 300px;
-    margin-bottom: 5rem;
-    position: absolute;
-    top: 10px;
-    left: 240px;
-}
-
-
-
-mat-label {
-    font-family: "Playfair Display", serif;
-}
-mat-error {
-    font-family: "Playfair Display", serif;
-}
-
-
-
-
-
-@media screen and (max-width: 768px) {
-    :host {
-        display: block;
-        position: relative;
-    }
-
-
-    input[type="submit"] {
-        width: 70%;
-        border-radius: 0.5rem;
-    }
-}
