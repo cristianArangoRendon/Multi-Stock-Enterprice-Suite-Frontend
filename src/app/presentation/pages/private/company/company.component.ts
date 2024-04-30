@@ -9,7 +9,7 @@ import { MatCardContent } from '@angular/material/card';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CompanyService } from 'src/app/infrastructure/services/Company/CompanyService';
-import { Dialog } from '@angular/cdk/dialog';
+import{MatDialog, MatDialogModule}from'@angular/material/dialog';
 
 @Component({
     selector: 'app-company',
@@ -22,7 +22,8 @@ import { Dialog } from '@angular/cdk/dialog';
         MatTooltipModule,
         MatIconModule,
         MatCardContent,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatDialogModule
     ],
     templateUrl: './company.component.html',
     styleUrl: './company.component.scss',
@@ -34,7 +35,8 @@ export class CompanyComponent {
     constructor(
         private fb: FormBuilder,
         private _router: Router,
-        private _company: CompanyService
+        private _company: CompanyService,
+        public dialogRef: MatDialog
     ) {}
     formularioLogin = this.fb.group({
         description: ['', [Validators.required]],
@@ -44,7 +46,9 @@ export class CompanyComponent {
         {
             if(this.formularioLogin.valid){
                 this._company.Create(this.formularioLogin.value).subscribe((success) => {
-                    if(success){
+                    if(success.isSuccess){
+                        this.dialogRef.closeAll();
+                        
                     }
                 });
             }
